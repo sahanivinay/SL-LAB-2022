@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+</head>
+<body>
+    <form>
+        Input String:  <input type="text" id="myInput"><br><br>
+        Search String: <input type="text" id="mySearch"><br><br>
+        <button onclick="myfunction()">Submit</button>
+    </form>
+    <script>
+        function myfunction(){
+         var str = document.getElementById("myInput").value;
+         var search = document.getElementById("mySearch").value;
+         var index = str.indexOf(search);
+         var num = 0; 
+         var whitespace = 0; 
+         var alphabets = 0;
+        
+        for(let i=0; i < str.length; i++) { 
+            if(str[i] >= '0' && str[i] <= '9') 
+                num++; 
+            else if (str[i] === ' ') 
+                whitespace++; 
+            else
+                alphabets++; 
+        } 
+        document.write("Entered String: " + str)
+        document.write("<br><br>")
+        document.write("Digits: " + num); 
+        document.write("<br><br>")
+        document.write("Whitespaces: \n" + whitespace); 
+        document.write("<br><br>")
+        document.write("Alphabets: \n" + alphabets); 
+        document.write("<br><br>")
+        document.write("Index: \n" + index); 
+        }
+        </script>
+</body>
+</html>
