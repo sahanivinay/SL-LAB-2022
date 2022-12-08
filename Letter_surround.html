@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>SURROUNDING STRING</title>
+        <h3>Letter Sorround</h3>
+        <P>The input string is:<span id="string1"></span></P>
+        <p>The Validity string is:<span id="string2"></span></p>
+    </head>
+    <body>
+        <SCRIPT>
+           var  s = "";
+            function simplestrng(str){
+                if(s[0]>='a'|| s[s.length-1]>='a')
+                return false;
+
+                else if(s.length==0)
+                return "not valid";
+
+                else{
+                    for(i=1;i<s.length-1;i++)
+                    {
+                        if(s[i]>='a')
+                        {
+                            if(s[i-1]!='+' || s[i+1]!='+')
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+			
+			s = window.prompt("Enter the string");
+            document.getElementById("string1").innerHTML=s;
+            document.getElementById("string2").innerHTML=simplestrng(s);
+        </SCRIPT>
+        
+    </body>
+</html>
